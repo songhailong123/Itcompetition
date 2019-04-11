@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<link rel="shortcut icon" href="img/help.png" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<script type="text/javascript" src="js/jquery-2.2.4.min .js"></script>
+		<script type="text/javascript" src="js/changeClass.js"></script>
+		<title>发布问题</title>
+	</head>
+	<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+	<!--[if lte IE 8]>
+<script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+	<body>
+		<header>
+			<nav class="nav">
+				<div class="logo fl">
+					<h1>LoveIt</h1>
+				</div>
+				<ul class="nav_ul">
+					<li class="li_hover">
+						<a href="index.html">主页</a>
+					</li>
+					<li>
+						<a href="index.html#index_section">比赛专栏</a>
+					</li>
+					<li>
+						<a href="help.html" target="_blank">有偿问答</a>
+					</li>
+					<li id="hover_li">
+						<a href="javascript:;">水平测试</a>
+						<div class="h_list">
+							<a href="paper.html" class="h_hover">考试真题</a>
+							<a href="school.html">在线测试</a>
+						</div>
+					</li>
+					<script type="text/javascript">
+						$(".h_list").children("a").mouseenter(function(){
+							$(this).addClass("h_hover").siblings().removeClass("h_hover");
+						});
+						$("#hover_li").mouseover(function(){
+							$(this).children("div").slideDown();
+							$(".nav_ul li:nth-child(4)").children("a").css({"color":"#FF1493","font-size":"21px"});
+						}).mouseleave(function(){
+							$(this).children("div").slideUp();
+							$(".nav_ul li:nth-child(4)").children("a").css({"color":"#000000","font-size":"18px"});
+						});
+					</script>
+					<li>
+						<a href="person.html">个人中心</a>
+					</li>
+				</ul>
+				<div class="login fr">
+					<a href="login.html" target="_blank">登陆/注册</a>
+				</div>
+			</nav>
+		</header>
+		<div class="w_outer">
+			<div class="w_content">
+				<div class="w_ask">
+					<img src="img/询问.png" />
+					<div>发布问题</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="w_title">
+					<textarea placeholder="标题：最多30个字" maxlength="30" id="w_title"></textarea>
+				</div>
+				<div class="w_text">
+					<textarea placeholder="请在此编辑内容"></textarea>
+					<input type="file" />
+					<span class="give_score">悬赏积分:<input type="text" placeholder="10" id="give_score"/></span>
+				</div>
+				<div class="w_label">
+					<span>分类:</span>
+					<div class="ask_h">
+						<input type="radio" id="ask_h" name="ask" />
+						<label for="ask_h">问题求助</label>
+					</div>
+					<div class="ask_c">
+						<input type="radio" id="ask_c" name="ask" />
+						<label for="ask_c">比赛咨询</label>
+					</div>
+					<button type="button" class="publish" id="publish" />发表</button>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$("#publish").click(function() {
+				if($("#w_title").val() == "") {
+					alert("请填写标题");
+				}
+				if($("#give_score").val() == "") {
+					alert("请选择积分");
+				}
+				if(isNaN($("#give_score").val())) {
+					alert("积分请填入纯数字");
+				}
+			});
+		</script>
+		<footer class="footer">
+			<p>Copyright © 2018 山东大学生竞赛网 联系电话：15254175369,15254175362 网站邮箱：1370123868@qq.com</p>
+		</footer>
+	</body>
+
+</html>

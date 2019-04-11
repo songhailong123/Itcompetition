@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="shortcut icon" href="img/help.png" />
+		<script type="text/javascript" src="js/jquery-2.2.4.min .js"></script>
+		<script type="text/javascript" src="js/changeClass.js"></script>
+		<title>查看回答</title>
+	</head>
+	<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+	<!--[if lte IE 8]>
+<script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+	<body>
+		<header>
+			<nav class="nav">
+				<div class="logo fl">
+					<h1>LoveIt</h1>
+				</div>
+				<ul class="nav_ul">
+					<li class="li_hover">
+						<a href="index.html">主页</a>
+					</li>
+					<li>
+						<a href="index.html#index_section">比赛专栏</a>
+					</li>
+					<li>
+						<a href="help.html" target="_blank">有偿问答</a>
+					</li>
+					<li id="hover_li">
+						<a href="javascript:;">水平测试</a>
+						<div class="h_list">
+							<a href="paper.html" class="h_hover">考试真题</a>
+							<a href="school.html">在线测试</a>
+						</div>
+					</li>
+					<script type="text/javascript">
+						$(".h_list").children("a").mouseenter(function(){
+							$(this).addClass("h_hover").siblings().removeClass("h_hover");
+						});
+						$("#hover_li").mouseover(function(){
+							$(this).children("div").slideDown();
+							$(".nav_ul li:nth-child(4)").children("a").css({"color":"#FF1493","font-size":"21px"});
+						}).mouseleave(function(){
+							$(this).children("div").slideUp();
+							$(".nav_ul li:nth-child(4)").children("a").css({"color":"#000000","font-size":"18px"});
+						});
+					</script>
+					<li>
+						<a href="person.html">个人中心</a>
+					</li>
+				</ul>
+				<div class="login fr">
+					<a href="login.html" target="_blank">登陆/注册</a>
+				</div>
+			</nav>
+
+		</header>
+		<section class="a_section">
+			<div class="a-content">
+				<div class="a_title">
+					<h1>标题</h1>
+					<img src="img/收藏.png" class="collect fr" id="collect" />
+				</div>
+				<div class="asker">提问人 :<span>Actor丶</span></div>
+				<div class="asker">积分:<span>50</span></div>
+				<div style="width: 100%;height: 20px;border: 1px solid #e8e8e8;background:  rgb(244, 244, 244);"></div>
+				<div class="a_tinner">
+					正文部分
+				</div>
+				<div>
+					<div class="p_myask c_myask">
+						<ul>
+							<li>
+								<span style="color: #696969;">Actor丶的回答:</span>
+								<a href="answer.html">产品经理如何避免被程序员打？</a>
+							</li>
+							<li>
+								<span style="color: #696969;">Actor丶的回答:</span>
+								<a href="answer.html">根据用户手机壳改变主题颜色功能怎么现实，程序猿与产品经理总是水火不容，您遇到过最不合理的需求是什么？</a>
+							</li>
+							<li>
+								<span style="color: #696969;">Actor丶的回答:</span>
+								<a href="answer.html">已经学完 HTML/CSS 但是完全看不懂JavaScript 教程怎么办？</a>
+							</li>
+							<li>
+								<span style="color: #696969;">Actor丶的回答:</span>
+								<a href="answer.html">我还需要学什么才能入行游戏开发？</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				function g(id) {
+					return document.getElementById(id);
+				}
+				g("collect").onclick = function() {
+					if(this.getAttribute("src") == "img/收藏.png") {
+						this.setAttribute("src", "img/已收藏.png");
+					} else {
+						this.setAttribute("src", "img/收藏.png");
+					}
+				}
+			</script>
+		</section>
+		<footer class="footer">
+			<p>Copyright © 2018 山东大学生竞赛网 联系电话：15254175369,15254175362 网站邮箱：1370123868@qq.com</p>
+		</footer>
+	</body>
+
+</html>

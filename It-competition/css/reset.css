@@ -1,0 +1,36 @@
+body,h1,h2,h3,h4,h5,h6,div,p,dl,dt,dd,ol,ul,li,form,table,th,td,a,img,span,strong,var,em,input,textarea,select,option,section{margin: 0; padding: 0;}
+a{
+	text-decoration: none;
+	cursor: pointer;
+	color: #3c3c3c;
+}
+ul{
+	list-style-type: none;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+em{
+	font-style: normal;
+    font-weight: normal;
+}
+input{
+	outline: none;
+	border: none;
+}
+.clearfix:after{
+	content:"";
+	display:block;
+	width:100%;
+	height:0;
+	clear:both;
+}
+ h1,h2,h3,h4,h5,h6{
+   	font-weight: normal;
+}
+div{
+   	display: block;
+}

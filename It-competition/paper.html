@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="img/it.jpg" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<script type="text/javascript" src="js/jquery-2.2.4.min .js"></script>
+		<script type="text/javascript" src="js/changeClass.js"></script>
+		<script type="text/javascript" src="js/backTop.js" ></script>
+		<title>在线测试</title>
+	</head>
+	<body>
+		<a href="javascript:;" class="btn" id="btn" title="回到顶部"></a>
+		<header>
+			<nav class="nav">
+				<div class="logo fl">
+					<h1>LoveIt</h1>
+				</div>
+				<ul class="nav_ul">
+					<li class="li_hover">
+						<a href="index.html">主页</a>
+					</li>
+					<li>
+						<a href="index.html#index_section">比赛专栏</a>
+					</li>
+					<li>
+						<a href="help.html" target="_blank">有偿问答</a>
+					</li>
+					<li id="hover_li">
+						<a href="javascript:;">水平测试</a>
+						<div class="h_list">
+							<a href="paper.html" class="h_hover">考试真题</a>
+							<a href="school.html">在线测试</a>
+						</div>
+					</li>
+					<script type="text/javascript">
+						$(".h_list").children("a").mouseenter(function() {
+							$(this).addClass("h_hover").siblings().removeClass("h_hover");
+						});
+						$("#hover_li").mouseover(function() {
+							$(this).children("div").slideDown();
+							$(".nav_ul li:nth-child(4)").children("a").css({
+								"color": "#FF1493",
+								"font-size": "21px"
+							});
+						}).mouseleave(function() {
+							$(this).children("div").slideUp();
+							$(".nav_ul li:nth-child(4)").children("a").css({
+								"color": "#000000",
+								"font-size": "18px"
+							});
+						});
+					</script>
+					<li>
+						<a href="person.html">个人中心</a>
+					</li>
+				</ul>
+				<div class="login fr">
+					<a href="login.html" target="_blank">登陆/注册</a>
+				</div>
+			</nav>
+		</header>
+
+		<section>
+			<div class="piclist">
+				<h6 class="search_result">全部分类</h6>
+				<ul class="listul">
+
+				</ul>
+
+				<div class="fydiv">
+					<ul class="fenye">
+
+					</ul>
+				</div>
+			</div>
+
+			<script type="text/javascript">
+				getPage(1);
+				//翻页
+				function getPage(pn) {
+					var dataCount = 50; //总数据条数
+					var pageSize = 12; //每页显示条数
+					var pageCount = Math.ceil(dataCount / pageSize); //总页数
+					if(pn == 0 || pn > pageCount) {
+						return;
+					}
+					var ul = $(".listul");
+					ul.empty();
+					//console.log(pageCount+"..."+pn)
+					paintPage(pageCount, pn); //绘制页码
+					var startPage = pageSize * (pn - 1);
+
+					if(pageCount == 1) { // 当只有一页时 
+						for(var j = 0; j < dataCount; j++) {
+							var e = "<li><a href=\"exam.html\"><img src=\"img/a3.png\"></a><p style=\"margin:10px;\"><a style=\"color:#000000;\">web前端</a></p></li>";
+							ul.append(e);
+						}
+					} else { // 当超过一页时 
+						var e = "";
+						var endPage = pn < pageCount ? pageSize * pn : dataCount;
+						for(var j = startPage; j < endPage; j++) {
+							var e = "<li><a href=\"exam.html\"><img src=\"img/a3.png\"></a><p style=\"margin:10px;\"><a style=\"color:#000000;\">web前端</a></p></li>";
+							ul.append(e);
+						}
+					}
+				}
+
+				//绘制页码
+				function paintPage(number, currNum) //number 总页数,currNum 当前页  
+				{
+					var pageUl = $(".fenye");
+					pageUl.empty();
+					var ulDetail = "";
+
+					if(number == 1) {
+						ulDetail = "<li class=\"prev\"><a href=\"javascript:void(0)\">上一页</a></li>" +
+							"<li class=\"numb choose\"><a href=\"javascript:getPage(1)\">1</a></li>" +
+							"<li class=\"next\"><a href=\"javascript:void(0)\">下一页</a></li>";
+					} else if(number == 2) {
+						ulDetail = "<li class=\"prev\"><a href=\"javascript:getPage(1)\">上一页</a></li>" +
+							"<li class=\"numb" + choosele(currNum, 1) + "\"><a href=\"javascript:getPage(1)\">1</a></li>" +
+							"<li class=\"numb" + choosele(currNum, 2) + "\"><a href=\"javascript:getPage(2)\">2</a></li>" +
+							"<li class=\"next\"><a href=\"javascript:getPage(2)\">下一页</a></li>";
+					} else if(number == 3) {
+						ulDetail = "<li class=\"prev\"><a href=\"javascript:getPage(" + parseInt(currNum - 1) + ")\">上一页</a></li>" +
+							"<li class=\"numb" + choosele(currNum, 1) + "\"><a href=\"javascript:getPage(1)\">1</a></li>" +
+							"<li class=\"numb" + choosele(currNum, 2) + "\"><a href=\"javascript:getPage(2)\">2</a></li>" +
+							"<li class=\"numb" + choosele(currNum, 3) + "\"><a href=\"javascript:getPage(3)\">3</a></li>" +
+							"<li class=\"next\"><a href=\"javascript:getPage(" + parseInt(currNum + 1) + ")\">下一页</a></li>";
+					} else if(number == currNum && currNum > 3) {
+						ulDetail = "<li class=\"prev\"><a href=\"javascript:getPage(" + parseInt(currNum - 1) + ")\">上一页</a></li>" +
+							"<li class=\"numb\"><a href=\"javascript:getPage(" + parseInt(currNum - 2) + ")\">" + parseInt(currNum - 2) + "</a></li>" +
+							"<li class=\"numb\"><a href=\"javascript:getPage(" + parseInt(currNum - 1) + ")\">" + parseInt(currNum - 1) + "</a></li>" +
+							"<li class=\"numb choose\"><a href=\"javascript:getPage(" + currNum + ")\">" + currNum + "</a></li>" +
+							"<li class=\"next\"><a href=\"javascript:getPage(" + currNum + ")\">下一页</a></li>";
+					} else if(currNum == 1 && number > 3) {
+						ulDetail = "<li class=\"prev\"><a href=\"javascript:void(0)\">上一页</a></li>" +
+							"<li class=\"numb choose\"><a href=\"javascript:void(0)\">1</a></li>" +
+							"<li class=\"numb\"><a href=\"javascript:getPage(2)\">2</a></li>" +
+							"<li class=\"numb\"><a href=\"javascript:getPage(3)\">3</a></li>" +
+							"<li class=\"next\"><a href=\"javascript:getPage(2)\">下一页</a></li>";
+					} else {
+						ulDetail = "<li class=\"prev\"><a href=\"javascript:getPage(" + parseInt(currNum - 1) + ")\">上一页</a></li>" +
+							"<li class=\"numb\"><a href=\"javascript:getPage(" + parseInt(currNum - 1) + ")\">" + parseInt(currNum - 1) + "</a></li>" +
+							"<li class=\"numb choose\"><a href=\"javascript:getPage(" + currNum + ")\">" + currNum + "</a></li>" +
+							"<li class=\"numb\"><a href=\"javascript:getPage(" + parseInt(currNum + 1) + ")\">" + parseInt(currNum + 1) + "</a></li>" +
+							"<li class=\"next\"><a href=\"javascript:getPage(" + parseInt(currNum + 1) + ")\">下一页</a></li>";
+					}
+
+					$(".fenye").append(ulDetail);
+
+				}
+
+				function choosele(num, cur) {
+					if(num == cur) {
+						return " choose";
+					} else {
+						return "";
+					}
+				}
+			</script>
+		</section>
+		<footer class="footer">
+			<p>Copyright © 2018 山东大学生竞赛网 联系电话：15254175369,15254175362 网站邮箱：1370123868@qq.com</p>
+		</footer>
+	</body>
+
+</html>

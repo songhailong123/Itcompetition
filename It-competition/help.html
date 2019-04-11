@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="shortcut icon" href="img/help.png" />
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<script type="text/javascript" src="js/jquery-2.2.4.min .js"></script>
+		<script type="text/javascript" src="js/backTop.js"></script>
+		<script type="text/javascript" src="js/swiper.min.js"></script>
+		<script type="text/javascript" src="js/tabs.js"></script>
+		<script type="text/javascript" src="js/help.js"></script>
+		<script type="text/javascript" src="js/changeClass.js"></script>
+		<title>有偿问答</title>
+	</head>
+	<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+	<!--[if lte IE 8]>
+	<script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+	<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<body>
+		<a href="javascript:;" class="btn" id="btn" title="回到顶部"></a>
+		<header>
+			<nav class="nav">
+				<div class="logo fl">
+					<h1>LoveIt</h1>
+				</div>
+				<ul class="nav_ul">
+					<li class="li_hover">
+						<a href="index.html">主页</a>
+					</li>
+					<li>
+						<a href="index.html#index_section">比赛专栏</a>
+					</li>
+					<li>
+						<a href="help.html" target="_blank">有偿问答</a>
+					</li>
+					<li id="hover_li">
+						<a href="javascript:;">水平测试</a>
+						<div class="h_list">
+							<a href="paper.html" class="h_hover">考试真题</a>
+							<a href="school.html">在线测试</a>
+						</div>
+					</li>					<script type="text/javascript">
+						$(".h_list").children("a").mouseenter(function() {
+							$(this).addClass("h_hover").siblings().removeClass("h_hover");
+						});
+						$("#hover_li").mouseover(function() {
+							$(this).children("div").slideDown();
+							$(".nav_ul li:nth-child(4)").children("a").css({
+								"color": "#FF1493",
+								"font-size": "21px"
+							});
+						}).mouseleave(function() {
+							$(this).children("div").slideUp();
+							$(".nav_ul li:nth-child(4)").children("a").css({
+								"color": "#000000",
+								"font-size": "18px"
+							});
+						});
+					</script>
+					<li>
+						<a href="person.html">个人中心</a>
+					</li>
+				</ul>
+				<div class="login fr">
+					<a href="login.html" target="_blank">登陆/注册</a>
+				</div>
+			</nav>
+		</header>
+		<section class="h_section">
+			<div class="h_outer">
+				<div class="h_select">
+					<div class="h_sleft fl" id="h_sleft">
+						<a href="javascript:;" class="active">最新动态</a>
+						<a href="javascript:;">问题求助</a>
+						<a href="javascript:;">比赛咨询</a>
+					</div>
+					<div style="width:420px;margin:40px auto 0 auto;">
+
+						<form id="search_mini_form" action="#" method="get">
+							<div class="form-search">
+								<button type="submit" title="Search" class="button"></button>
+								<input id="search" type="text" name="q" value="" placeholder="搜索" class="input-text" maxlength="128" />
+								<button type="reset" id="gh-search-reset" class="gh-search-reset"><span class="gh-text-replace">×</span></button>
+							</div>
+						</form>
+
+					</div>
+					<div class="h_sright fr">
+						<a href="write.html" target="_blank" class="write">
+							<img src="img/write.png" / class="fl">
+							<div class="fl">发布问题</div>
+						</a>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+
+				<!--
+              	作者：1370123868@qq.com
+              	时间：2018-07-28
+              	描述：内容部分，消息动态
+              -->
+				<div class="inner-left fl">
+					<div id="tabs-container" class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="content-slide">
+									<ul class="news-list">
+										<li>
+											<div class="content fl">
+												<div class="content_list">
+													<div class="list_title">
+														<a href="javascript:;"><img src="img/head.png" /><span class="title_name fl">Actor丶</span></a>
+														<img src="img/收藏.png" class="collect fr" />
+													</div>
+													<h2>撒谎卡时间我回馈xmskladfhia</h2>
+													<div class="list_text" id="list_text">
+														<a href="javascript:;" target="_blank">
+															啊啊啊啊啊啊啊啊克sd张家口的哈skid那些卡黑u哇也会让覅新开发是看你打开手机电话nij
+														</a>
+													</div>
+													<div class="clearfix"></div>
+													<div class="number fl">
+														<img src="img/钱袋.png" />
+														<div class="scort">50积分</div>
+														<a href="javascript:;" class="h_get fl" id="h_get">接&nbsp;单</a>
+														<a class="fl report">举报</a>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="content fl">
+												<div class="content_list">
+													<div class="list_title">
+														<a href="javascript:;"><img src="img/head.png" /><span class="title_name fl">Actor丶</span></a>
+														<img src="img/收藏.png" class="collect fr" />
+													</div>
+													<h2>撒谎卡时间我回馈xmskladfhia</h2>
+													<div class="list_text" id="list_text">
+														<a href="javascript:;" target="_blank">
+															ask几何方法烦啊安康SHDIWAQGahd世俗的哈萨啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊克sd张家口的哈skid会阿瓦达爸妈肯定不行AJK刷卡回复看看那些卡黑u哇也会让覅新开发是看你打开手机电话nij
+														</a>
+													</div>
+													<div class="clearfix"></div>
+													<div class="number fl">
+														<img src="img/钱袋.png" />
+														<div class="scort">50积分</div>
+														<a href="javascript:;" class="h_get fl" id="h_get">接&nbsp;单</a>
+														<a class="fl report">举报</a>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="content fl">
+												<div class="content_list">
+													<div class="list_title">
+														<a href="javascript:;"><img src="img/head.png" /><span class="title_name fl">Actor丶</span></a>
+														<img src="img/收藏.png" class="collect fr" />
+													</div>
+													<h2>撒谎卡时间我回馈xmskladfhia</h2>
+													<div class="list_text" id="list_text">
+														<a href="javascript:;" target="_blank">
+															ask几何方法烦啊安康SHDIWAQGahd世俗的哈萨啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊克sd张家口的哈skid会阿瓦达爸妈肯定不行AJK刷卡回复看看那些卡黑u哇也会让覅新开发是看你打开手机电话nij
+														</a>
+													</div>
+													<div class="clearfix"></div>
+													<div class="number fl">
+														<img src="img/钱袋.png" />
+														<div class="scort">50积分</div>
+														<a href="javascript:;" class="h_get fl" id="h_get">接&nbsp;单</a>
+														<a class="fl report">举报</a>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="content-slide">
+									<ul class="news-list">
+										<li>
+											<div class="content fl">
+												<div class="content_list">
+													<div class="list_title">
+														<a href="javascript:;"><img src="img/head.png" /><span class="title_name fl">Actor丶</span></a>
+														<img src="img/收藏.png" class="collect fr" />
+													</div>
+													<h2>撒谎卡时间我回馈xmskladfhia</h2>
+													<div class="list_text" id="list_text">
+														<a href="javascript:;" target="_blank">
+															ask几何方法烦啊安康SHDIWAQGahd世俗的哈萨啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊克sd张家口的哈skid会阿瓦达爸妈肯定不行AJK刷卡回复看看那些卡黑u哇也会让覅新开发是看你打开手机电话nij
+														</a>
+													</div>
+													<div class="clearfix"></div>
+													<div class="number fl">
+														<img src="img/钱袋.png" />
+														<div class="scort">50积分</div>
+														<a href="javascript:;" class="h_get fl" id="h_get">接&nbsp;单</a>
+														<a class="fl report">举报</a>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="content-slide">
+									<ul class="news-list">
+										<li>
+											<div class="content fl">
+												<div class="content_list">
+													<div class="list_title">
+														<a href="javascript:;"><img src="img/head.png" /><span class="title_name fl">Actor丶</span></a>
+														<img src="img/收藏.png" class="collect fr" />
+													</div>
+													<h2>撒谎卡时间我回馈xmskladfhia</h2>
+													<div class="list_text" id="list_text">
+														<a href="javascript:;" target="_blank">
+															ask几何方法烦啊安康SHDIWAQGahd世俗的哈萨啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊克sd张家口的哈skid会阿瓦达爸妈肯定不行AJK刷卡回复看看那些卡黑u哇也会让覅新开发是看你打开手机电话nij
+														</a>
+													</div>
+													<div class="clearfix"></div>
+													<div class="number fl">
+														<img src="img/钱袋.png" />
+														<div class="scort">50积分</div>
+														<a href="javascript:;" class="h_get fl" id="h_get">接&nbsp;单</a>
+														<a class="fl report">举报</a>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="inner-right fl">
+					<div class="user">
+						<div class="user_info">
+							<span><img src="img/user_head.png"/></span>
+							<div class="fl user_list">
+								<p>Hi&nbsp;
+									<a href="login.html" target="_blank">请登录</a>
+								</p>
+								<p>积分：<em id="score">0</em></p>
+								<p>等级：<em>Lv0</em></p>
+								<p>签到天数：<em>0</em></p>
+							</div>
+						</div>
+						<div class="get_btn">
+							<a class="get_score" href="javascript:;">签到领积分</a>
+							<a class="turn_score" href="javascript:;">兑换积分</a>
+						</div>
+					</div>
+					<div class="person">
+						<ul>
+							<li>
+								<a href="person.html" target="_blank">
+									<img src="img/订单管理.png" />
+									<div class="p-order fl">我的接单</div>
+									<div class="fr p-num" id="p-num">0</div>
+								</a>
+							</li>
+							<li>
+								<a href="person.html" target="_blank">
+									<img src="img/收藏.png" />
+									<div class="p-order fl">我的收藏</div>
+									<div class="fr p-num" id="p_collect">0</div>
+								</a>
+							</li>
+							<li>
+								<a href="person.html" target="_blank">
+									<img src="img/evaluate.png" />
+									<div class="p-order fl">我的提问</div>
+									<div class="fr p-num" id="p_ask">0</div>
+								</a>
+							</li>
+							<li>
+								<a href="person.html" target="_blank">
+									<img src="img/mail.png" />
+									<div class="p-order fl">最新消息</div>
+									<div class="fr p-num" id="p_news">0</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/意见反馈.png" />
+									<div class="p-order fl">意见反馈</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<img src="img/客服.png" />
+									<div class="p-order fl">联系我们</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer">
+			<p>Copyright © 2018 山东大学生竞赛网 联系电话：15254175369,15254175362 网站邮箱：1370123868@qq.com</p>
+		</footer>
+		<script type="text/javascript">
+			$(function() {
+				var gh_input_search = $("#search_mini_form input#search,.gh-search-reset"),
+					gh_search_reset = $("#gh-search-reset"),
+					form_search = $(".form-search"),
+					input_search = $("#search");
+
+				$(gh_input_search).focus(function() {
+					//$(form_search).css({"background":"#fff","border-left":"1px #D5D5D5 solid"});
+					$(input_search).css("width", "200px");
+					$(gh_search_reset).css("display", "inline-block");
+				})
+				$(gh_input_search).blur(function() {
+					var this_val = $("#search_mini_form input#search").val();
+					if(this_val.length > 0 && this_val != "Search") {
+						$(gh_search_reset).css("display", "inline-block");
+					} else {
+						//$(form_search).css({"background":"none","border-left":"none"});
+						$(input_search).css("width", "57px").attr("value", "");
+						$(gh_search_reset).css("display", "none");
+					}
+				})
+			})
+		</script>
+	</body>
+
+</html>

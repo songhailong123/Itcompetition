@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<link rel="shortcut icon" href="img/it.jpg" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<script type="text/javascript" src="js/jquery-2.2.4.min .js"></script>
+		<script type="text/javascript" src="js/changeClass.js"></script>
+		<script type="text/javascript" src="js/backTop.js" ></script>
+		<title>个人中心</title>
+	</head>
+	<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+	<!--[if lte IE 8]>
+<script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+	<body>
+		<a href="javascript:;" class="btn" id="btn" title="回到顶部"></a>
+			<header>
+			<nav class="nav">
+				<div class="logo fl">
+					<h1>LoveIt</h1>
+				</div>
+				<ul class="nav_ul">
+					<li class="li_hover">
+						<a href="index.html">主页</a>
+					</li>
+					<li>
+						<a href="index.html#index_section">比赛专栏</a>
+					</li>
+					<li>
+						<a href="help.html" target="_blank">有偿问答</a>
+					</li>
+					<li id="hover_li">
+						<a href="javascript:;">水平测试</a>
+						<div class="h_list">
+							<a href="paper.html" class="h_hover">考试真题</a>
+							<a href="school.html">在线测试</a>
+						</div>
+					</li>
+					<script type="text/javascript">
+						$(".h_list").children("a").mouseenter(function(){
+							$(this).addClass("h_hover").siblings().removeClass("h_hover");
+						});
+						$("#hover_li").mouseover(function(){
+							$(this).children("div").slideDown();
+							$(".nav_ul li:nth-child(4)").children("a").css({"color":"#FF1493","font-size":"21px"});
+						}).mouseleave(function(){
+							$(this).children("div").slideUp();
+							$(".nav_ul li:nth-child(4)").children("a").css({"color":"#000000","font-size":"18px"});
+						});
+					</script>
+					<li>
+						<a href="person.html">个人中心</a>
+					</li>
+				</ul>
+				<div class="login fr">
+					<a href="login.html" target="_blank">登陆/注册</a>
+				</div>
+			</nav>
+		</header>
+		<section>
+			<div class="p_content">
+				<div class="p_title">
+					<div class="preview fl">
+						<div id="preview">
+							<img id="imghead" border="0" src="img/head.png" width="90" height="90" onClick="$('#previewImg').click();">
+						</div>
+						<div style="color: #7C7C7C; margin-left: 14px;margin-top: 12px;">点击图片修改头像</div>
+						<input type="file" onChange="previewImage(this)" style="display: none;" id="previewImg">
+					</div>
+					<div class="p_name fl">
+						<div class="fl user_list">
+							<p style="font-size:24px ;">Hi&nbsp;
+								<a href="login.html" target="_blank">请登录</a>
+							</p>
+							<p>积分：<em id="score">0</em></p>
+							<p>等级：<em>Lv0</em></p>
+							<p>签到天数：<em>0</em></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="p_sort">
+					<div class="p_nav">
+						<ul id="p_nav">
+							<li class="p_change">我的提问</li>
+							<li>我的关注</li>
+							<li>我的订单</li>
+							<li>最新消息</li>
+						</ul>
+					</div>
+					<div class="p_text">
+						<div class="p_myask">
+							<ul>
+								<li>
+									<a href="confirm.html">产品经理如何避免被程序员打？</a>
+								</li>
+								<li>
+									<a href="confirm.html">根据用户手机壳改变主题颜色功能怎么现实，程序猿与产品经理总是水火不容，您遇到过最不合理的需求是什么？</a>
+								</li>
+								<li>
+									<a href="confirm.html">已经学完 HTML/CSS 但是完全看不懂JavaScript 教程怎么办？</a>
+								</li>
+								<li>
+									<a href="confirm.html">我还需要学什么才能入行游戏开发？</a>
+								</li>
+							</ul>
+						</div>
+						<!--
+                        	作者：1370123868@qq.com
+                        	时间：2018-08-03
+                        	描述：关注页面跳转的是alltext.html页面
+                        -->
+						<div class="p_myask">
+							<ul>
+								<li>
+									<a href="alltext.html">根据用户手机壳改变主题颜色功能怎么现实，程序猿与产品经理总是水火不容，您遇到过最不合理的需求是什么？</a>
+								</li>
+								<li>
+									<a href="alltext.html">已经学完 HTML/CSS 但是完全看不懂JavaScript 教程怎么办？</a>
+								</li>
+								<li>
+									<a href="alltext.html">我还需要学什么才能入行游戏开发？</a>
+								</li>
+							</ul>
+						</div>
+						<div class="p_myask">
+							<ul>
+								<li>
+									<a href="seetext.html">产品经理如何避免被程序员打？</a>
+								</li>
+								<li>
+									<a href="seetext.html">根据用户手机壳改变主题颜色功能怎么现实，程序猿与产品经理总是水火不容，您遇到过最不合理的需求是什么？</a>
+								</li>
+								<li>
+									<a href="seetext.html">已经学完 HTML/CSS 但是完全看不懂JavaScript 教程怎么办？</a>
+								</li>
+							</ul>
+						</div>
+						<div class="nothing">
+							暂无信息
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script type="text/javascript">
+			$("#p_nav>li").click(function() {
+				$(this).addClass('p_change').siblings().removeClass('p_change');
+				var index = $(this).index();
+				$(".p_text>div:eq(" + index + ")").css('display', "block").siblings().css('display', "none");
+			});
+		</script>
+		<footer class="footer">
+			<p>Copyright © 2018 山东大学生竞赛网 联系电话：15254175369,15254175362 网站邮箱：1370123868@qq.com</p>
+		</footer>
+	</body>
+	<script>
+		//图片上传预览    IE是用了滤镜。
+		function previewImage(file) {
+			var MAXWIDTH = 90;
+			var MAXHEIGHT = 90;
+			var div = document.getElementById('preview');
+			if(file.files && file.files[0]) {
+				div.innerHTML = '<img id=imghead onclick=$("#previewImg").click()>';
+				var img = document.getElementById('imghead');
+				img.onload = function() {
+					var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+					img.width = rect.width;
+					img.height = rect.height;
+					//                 img.style.marginLeft = rect.left+'px';
+					img.style.marginTop = rect.top + 'px';
+				}
+				var reader = new FileReader();
+				reader.onload = function(evt) {
+					img.src = evt.target.result;
+				}
+				reader.readAsDataURL(file.files[0]);
+			} else //兼容IE
+			{
+				var sFilter = 'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+				file.select();
+				var src = document.selection.createRange().text;
+				div.innerHTML = '<img id=imghead>';
+				var img = document.getElementById('imghead');
+				img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+				var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+				status = ('rect:' + rect.top + ',' + rect.left + ',' + rect.width + ',' + rect.height);
+				div.innerHTML = "<div id=divhead style='width:" + rect.width + "px;height:" + rect.height + "px;margin-top:" + rect.top + "px;" + sFilter + src + "\"'></div>";
+			}
+		}
+
+		function clacImgZoomParam(maxWidth, maxHeight, width, height) {
+			var param = {
+				top: 0,
+				left: 0,
+				width: width,
+				height: height
+			};
+			if(width > maxWidth || height > maxHeight) {
+				rateWidth = width / maxWidth;
+				rateHeight = height / maxHeight;
+
+				if(rateWidth > rateHeight) {
+					param.width = maxWidth;
+					param.height = Math.round(height / rateWidth);
+				} else {
+					param.width = Math.round(width / rateHeight);
+					param.height = maxHeight;
+				}
+			}
+			param.left = Math.round((maxWidth - param.width) / 2);
+			param.top = Math.round((maxHeight - param.height) / 2);
+			return param;
+		}
+	</script>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<link rel="shortcut icon" href="img/help.png" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<script type="text/javascript" src="js/jquery-2.2.4.min .js"></script>
+		<script type="text/javascript" src="js/changeClass.js"></script>
+		<script type="text/javascript" src="js/backTop.js"></script>
+		<title>水平测试</title>
+	</head>
+
+	<body style="background-color: #FFFFFF;">
+		<a href="javascript:;" class="btn" id="btn" title="回到顶部"></a>
+
+		<header>
+			<nav class="nav">
+				<div class="logo fl">
+					<h1>LoveIt</h1>
+				</div>
+				<ul class="nav_ul">
+					<li class="li_hover">
+						<a href="index.html">主页</a>
+					</li>
+					<li>
+						<a href="index.html#index_section">比赛专栏</a>
+					</li>
+					<li>
+						<a href="help.html" target="_blank">有偿问答</a>
+					</li>
+					<li id="hover_li">
+						<a href="javascript:;">水平测试</a>
+						<div class="h_list">
+							<a href="paper.html" class="h_hover">考试真题</a>
+							<a href="school.html">在线测试</a>
+						</div>
+					</li>
+					<script type="text/javascript">
+						$(".h_list").children("a").mouseenter(function() {
+							$(this).addClass("h_hover").siblings().removeClass("h_hover");
+						});
+						$("#hover_li").mouseover(function() {
+							$(this).children("div").slideDown();
+							$(".nav_ul li:nth-child(4)").children("a").css({
+								"color": "#FF1493",
+								"font-size": "21px"
+							});
+						}).mouseleave(function() {
+							$(this).children("div").slideUp();
+							$(".nav_ul li:nth-child(4)").children("a").css({
+								"color": "#000000",
+								"font-size": "18px"
+							});
+						});
+					</script>
+					<li>
+						<a href="person.html">个人中心</a>
+					</li>
+				</ul>
+				<div class="login fr">
+					<a href="login.html" target="_blank">登陆/注册</a>
+				</div>
+			</nav>
+
+		</header>
+		<section class="exam">
+			<div class="exam_outer">
+				<div class="e_text">
+					<div style="width:15%;float: left;height: 40px;line-height: 40px;">水平测试试题一</div>
+					<div style="float: left;width:75% ;">
+						<a href="javascript:;"><img src="img/下载 .png" width="35px" height="35px" /></a>
+					</div>
+					<select class="fl" style="height:34px; line-height:34px;font-size: 17px;">
+						<option>17年期末</option>
+						<option>18年期末</option>
+					</select>
+				</div>
+				<div class="exam_title">
+					<h1>一、 单选题（题数：20，共 100.0 分）</h1>
+					<button type="button" class="publish" id="publish" />交卷</button>
+				</div>
+				<div class="exam_content">
+					<div class="question">
+						<div style="display: flex;width: 100%;">
+							<span class="q_num">1.</span>
+							<div style="margin-top: 8px;">设置文本不换行的样式属性是（</div>
+							<div id="right" class="q_right">&nbsp;C</div>
+							<div style="margin-top: 8px;">)</div>
+						</div>
+						<p style="margin-top: 8px;margin-left:20px;">（5.0分）</p>
+					</div>
+					<ul class="exam_list">
+						<li><span>A、</span><input type="radio" name="exam" value="A" id="A" /><label for="A">wordbreak</label></li>
+						<li><span>B、</span><input type="radio" name="exam" value="B" id="B" /><label for="B">letterspacing</label></li>
+						<li><span>C、</span><input type="radio" name="exam" value="C" id="C" /><label for="C">whitespace </label></li>
+						<li><span>D、</span><input type="radio" name="exam" value="D" id="D" /><label for="D">wordspacing</label></li>
+					</ul>
+					<div class="myselect">
+						<span>我的答案:<span style="margin-left: 10px;"></span></span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="result_out">
+		</div>
+		<div class="result">
+			<div class="r_score">
+				<p class="r_s1">交卷成功</p>
+				<p class="r_s1">你的成绩为:<span>100</span>分</p>
+			</div>
+			<div class="r_btn">
+				<button type="button" class="publish" id="see" />查看</button>
+				<button type="button" class="publish newbtn" id="next" />下一套</button>
+			</div>
+		</div>
+		<footer class="footer">
+			<p>Copyright © 2018 山东大学生竞赛网 联系电话：15254175369,1525417562 网站邮箱：1370123868@qq.com</p>
+		</footer>
+		<script type="text/javascript">
+			$("#publish").click(function() {
+				$(".result_out").css("display", "block");
+				$(".result").css("display", "block");
+			});
+			$("#see").click(function() {
+				$(".result_out").css("display", "none");
+				$(".result").css("display", "none");
+				$(".q_right").css("display", "block");
+			});
+			$("#next").click(function() {
+				$(".result_out").css("display", "none");
+				$(".result").css("display", "none");
+			});
+		</script>
+		<script type="text/javascript">
+			$(".exam_list").children("li").click(function() {
+				var text = $(this).children("input").val();
+				console.log(text);
+				$(".myselect").children().children().text(text);
+			});
+		</script>
+	</body>
+
+</html>
